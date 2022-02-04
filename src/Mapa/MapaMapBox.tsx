@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 
+// eslint-disable-next-line import/no-webpack-loader-syntax
 import mapboxgl from "mapbox-gl";
 import styled from "styled-components";
 
@@ -8,6 +9,11 @@ const mapHeight = `${window.innerHeight}px`;
 const mapWidth = `${window.innerWidth}px`;
 
 export default function MapaMaxBox() {
+  // The following is required to stop "npm build" from transpiling mapbox code.
+  // notice the exclamation point in the import.
+  // @ts-ignore
+  // eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
+  mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
   const mapContainer = useRef<any>();
   const map = useRef<mapboxgl.Map>();
   const [lng, setLng] = useState(-43.95319);
