@@ -45,7 +45,14 @@
         ]
     },
     "devDependencies": {
+        "@babel/core": "^7.17.0",
+        "@babel/plugin-syntax-bigint": "^7.8.3",
+        "@babel/preset-env": "^7.16.11",
+        "@babel/preset-react": "^7.16.7",
+        "@babel/preset-typescript": "^7.16.7",
         "@types/mapbox-gl": "^2.6.0",
-        "@types/styled-components": "^5.1.21"
+        "@types/styled-components": "^5.1.21",
+        "babel-loader": "^8.2.3",
+        "html-loader": "^3.1.0"
     }
 }
